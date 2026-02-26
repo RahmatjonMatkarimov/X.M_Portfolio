@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://xusainboyevmuhammadjon.rahmatjonmatkarimov.uz/sitemap.xml
