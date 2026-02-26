@@ -109,7 +109,6 @@ onMounted(() => {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  max-width: 1000px;
   margin: 0 auto;
 }
 
