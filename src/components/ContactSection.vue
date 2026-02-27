@@ -70,12 +70,12 @@ onMounted(() => {
         mumkin</p>
     </div>
 
-    <div class="contact-grid flex flex-wrap justify-center gap-[2rem] mx-auto">
-      <a v-for="contact in contacts" :key="contact.name" :href="contact.link" target="_blank" class="contact-card glass flex-1 basis-[280px] min-w-[280px] flex items-center gap-[1.5rem] p-[1rem] no-underline text-inherit
+    <div class="contact-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2rem] w-full mx-auto">
+      <a v-for="contact in contacts" :key="contact.name" :href="contact.link" target="_blank" class="contact-card glass flex items-center gap-[1.2rem] p-[1.2rem] no-underline text-inherit
                transition-all duration-400 ease-[cubic-bezier(0.175,0.885,0.32,1.275)]
                hover:-translate-y-2 hover:border-[#6366f1] dark:hover:border-[#818cf8]
                hover:bg-[rgba(99,102,241,0.2)] dark:hover:bg-[rgba(129,140,248,0.2)]">
-        <div class="w-[54px] h-[54px] rounded-[1rem] flex items-center justify-center flex-shrink-0"
+        <div class="w-[50px] h-[50px] rounded-[1rem] flex items-center justify-center flex-shrink-0"
           :style="{ backgroundColor: contact.color + '20', color: contact.color }">
           <component :is="contact.icon" :size="32" />
         </div>
