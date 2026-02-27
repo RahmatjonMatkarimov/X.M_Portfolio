@@ -40,7 +40,7 @@ const contacts = [
 ];
 
 onMounted(() => {
-  gsap.fromTo('.contact-card', 
+  gsap.fromTo('.contact-card',
     {
       y: 40,
       opacity: 0
@@ -61,98 +61,29 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="contact" class="contact-section container">
-    <div class="section-header">
-      <h2 class="section-title">Bog'lanish</h2>
-      <p class="section-subtitle">Menga istalgan platforma orqali xabar yozishingiz mumkin</p>
+  <section id="contact" class="max-w-[1200px] mx-auto px-4 pt-[9rem]">
+    <div class="text-center mb-[4rem]">
+      <h2
+        class="text-[clamp(1.5rem,8vw,2.5rem)] font-extrabold mb-[1rem] leading-[1.2] text-[#0f172a] dark:text-[#f8fafc]">
+        Bog'lanish</h2>
+      <p class="text-[1.1rem] text-[#475569] dark:text-[#94a3b8]">Menga istalgan platforma orqali xabar yozishingiz
+        mumkin</p>
     </div>
 
-    <div class="contact-grid">
-      <a v-for="contact in contacts" 
-         :key="contact.name" 
-         :href="contact.link" 
-         target="_blank"
-         class="contact-card glass">
-        <div class="icon-wrapper" :style="{ backgroundColor: contact.color + '20', color: contact.color }">
+    <div class="contact-grid flex flex-wrap justify-center gap-[2rem] mx-auto">
+      <a v-for="contact in contacts" :key="contact.name" :href="contact.link" target="_blank" class="contact-card glass flex-1 basis-[280px] min-w-[280px] flex items-center gap-[1.5rem] p-[1rem] no-underline text-inherit
+               transition-all duration-400 ease-[cubic-bezier(0.175,0.885,0.32,1.275)]
+               hover:-translate-y-2 hover:border-[#6366f1] dark:hover:border-[#818cf8]
+               hover:bg-[rgba(99,102,241,0.2)] dark:hover:bg-[rgba(129,140,248,0.2)]">
+        <div class="w-[54px] h-[54px] rounded-[1rem] flex items-center justify-center flex-shrink-0"
+          :style="{ backgroundColor: contact.color + '20', color: contact.color }">
           <component :is="contact.icon" :size="32" />
         </div>
-        <div class="card-info">
-          <h3>{{ contact.name }}</h3>
-          <p>{{ contact.value }}</p>
+        <div>
+          <h3 class="text-[1.25rem] font-bold mb-[0.25rem] text-[#0f172a] dark:text-[#f8fafc]">{{ contact.name }}</h3>
+          <p class="text-[#475569] dark:text-[#94a3b8]">{{ contact.value }}</p>
         </div>
       </a>
     </div>
   </section>
 </template>
-
-<style scoped>
-.contact-section {
-  padding: 6rem 1rem;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.section-title {
-  font-size: clamp(1.5rem, 8vw, 2.5rem);
-  margin-bottom: 1rem;
-}
-
-.section-subtitle {
-  color: var(--text-secondary);
-  font-size: 1.1rem;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin: 0 auto;
-}
-
-.contact-card {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 2rem;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-              background 0.4s ease, 
-              border-color 0.4s ease;
-  text-decoration: none;
-  color: inherit;
-}
-
-.contact-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent-color);
-  background: var(--accent-glow);
-}
-
-.icon-wrapper {
-  width: 64px;
-  height: 64px;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.card-info h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.25rem;
-}
-
-.card-info p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-}
-
-@media (max-width: 640px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>

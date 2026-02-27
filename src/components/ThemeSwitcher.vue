@@ -29,7 +29,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <button @click="toggleTheme" class="theme-toggle" aria-label="Toggle Theme">
+  <button @click="toggleTheme" class="bg-[rgba(255,255,255,0.6)] dark:bg-[rgba(15,23,42,0.6)]
+           backdrop-blur-[8px] border border-[rgba(255,255,255,0.5)] dark:border-[rgba(255,255,255,0.1)]
+           text-[#0f172a] dark:text-[#f8fafc] p-[0.75rem] rounded-[1rem] cursor-pointer
+           flex items-center justify-center transition-all duration-300
+           shadow-[0_4px_12px_rgba(0,0,0,0.1)] 
+           hover:scale-[1.1] hover:bg-[rgba(99,102,241,0.2)] dark:hover:bg-[rgba(129,140,248,0.2)]"
+    aria-label="Toggle Theme">
     <transition name="scale" mode="out-in">
       <Sun v-if="isDark" :size="24" />
       <Moon v-else :size="24" />
@@ -38,26 +44,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.theme-toggle {
-  background: var(--glass-bg);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--glass-border);
-  color: var(--text-primary);
-  padding: 0.75rem;
-  border-radius: 1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.theme-toggle:hover {
-  transform: scale(1.1);
-  background: var(--accent-glow);
-}
-
 .scale-enter-active,
 .scale-leave-active {
   transition: all 0.2s ease;

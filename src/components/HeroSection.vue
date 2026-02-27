@@ -9,85 +9,49 @@ const heroCta = ref(null);
 
 onMounted(() => {
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-  
+
   tl.from(heroText.value, {
     y: 50,
     opacity: 0,
     duration: 1,
     delay: 0.5
   })
-  .from(heroSub.value, {
-    y: 30,
-    opacity: 0,
-    duration: 0.8
-  }, '-=0.5')
-  .from(heroCta.value, {
-    scale: 0.8,
-    opacity: 0,
-    duration: 0.6
-  }, '-=0.3');
+    .from(heroSub.value, {
+      y: 30,
+      opacity: 0,
+      duration: 0.8
+    }, '-=0.5')
+    .from(heroCta.value, {
+      scale: 0.8,
+      opacity: 0,
+      duration: 0.6
+    }, '-=0.3');
 });
 </script>
 
 <template>
-  <section class="hero container">
+  <section
+    class="max-w-[1200px] mx-auto px-8 min-h-[80vh] md:min-h-[70vh] flex items-center justify-center text-center pt-[4rem]">
     <div class="hero-content">
-      <h1 ref="heroText" class="title">
-        Salom, Men <span class="gradient-text">Xusainboyev Muhammadjon</span><br>
+      <h1 ref="heroText"
+        class="text-[clamp(1.8rem,9vw,4.5rem)] mb-[1.5rem] text-[#0f172a] dark:text-[#f8fafc] font-extrabold leading-[1.2]">
+        Salom, Men <span
+          class="bg-gradient-to-br from-[#6366f1] to-[#f472b6] bg-clip-text text-transparent">Xusainboyev
+          Muhammadjon</span><br>
         Professional Treder
       </h1>
-      <p ref="heroSub" class="subtitle">
-        Moliya bozorlari tahlilchisi va treder. Strategik trading va 
+      <p ref="heroSub"
+        class="text-[clamp(0.95rem,4vw,1.25rem)] text-[#475569] dark:text-[#94a3b8] max-w-[700px] mx-auto mb-[2.5rem] leading-[1.6]">
+        Moliya bozorlari tahlilchisi va treder. Strategik trading va
         bozor tahlili orqali muvaffaqiyatga erishish yo'lida.
       </p>
-      <div ref="heroCta" class="cta-group">
-        <a href="#contact" class="btn btn-primary">
-          Bog'lanish <ArrowRight :size="20" />
+      <div ref="heroCta" class="flex justify-center gap-[1rem]">
+        <a href="#contact"
+          class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold cursor-pointer transition-all duration-300">
+          Bog'lanish
+          <ArrowRight :size="20" />
         </a>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-.hero {
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-top: 4rem;
-}
-
-.title {
-  font-size: clamp(1.8rem, 9vw, 4.5rem);
-  margin-bottom: 1.5rem;
-  color: var(--text-primary);
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent-color), #f472b6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.subtitle {
-  font-size: clamp(0.95rem, 4vw, 1.25rem);
-  color: var(--text-secondary);
-  max-width: 700px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.6;
-}
-
-.cta-group {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    min-height: 70vh;
-  }
-}
-</style>

@@ -5,66 +5,29 @@ import ContactSection from './components/ContactSection.vue';
 </script>
 
 <template>
-  <div class="app-wrapper">
-    <!-- Navigation -->
-    <nav class="navbar glass">
-      <div class="container nav-container">
-        <div class="logo">X.M</div>
-        <div class="nav-right">
+  <div
+    class="app-wrapper relative min-h-screen text-[#0f172a] bg-[#f8fafc] dark:bg-[#020617] dark:text-[#f8fafc] transition-colors duration-400 font-outfit overflow-x-hidden">
+    <nav class="glass fixed top-[1.5rem] left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] max-w-[1000px] z-[100] py-3">
+      <div class="container flex items-center justify-between">
+        <div
+          class="text-[1.5rem] font-extrabold bg-gradient-to-br from-[#6366f1] to-[#f472b6] bg-clip-text text-transparent">
+          X.M
+        </div>
+        <div>
           <ThemeSwitcher />
         </div>
       </div>
     </nav>
 
-    <!-- Content -->
     <main>
       <HeroSection />
       <ContactSection />
     </main>
-
-    <!-- Footer -->
-    <footer class="footer">
+    
+    <footer class="text-center py-16 text-[#475569] dark:text-[#94a3b8]">
       <div class="container">
         <p>&copy; 2026 Xusainboyev Muhammadjon. Barcha huquqlar himoyalangan.</p>
       </div>
     </footer>
   </div>
 </template>
-
-<style>
-.app-wrapper {
-  position: relative;
-  min-height: 100vh;
-}
-
-.navbar {
-  position: fixed;
-  top: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 3rem);
-  max-width: 1000px;
-  z-index: 100;
-  padding: 0.75rem 0;
-}
-
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--accent-color), #f472b6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.footer {
-  text-align: center;
-  padding: 4rem 0;
-  color: var(--text-secondary);
-}
-</style>
