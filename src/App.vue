@@ -10,10 +10,13 @@ import ContactSection from './components/ContactSection.vue';
     <nav class="glass fixed top-[1.5rem] left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] max-w-[1000px] z-[100] py-3">
       <div class="container flex items-center justify-between">
         <div
-          class="text-[1.5rem] font-extrabold bg-gradient-to-br from-[#6366f1] to-[#f472b6] bg-clip-text text-transparent">
+          class="text-[1.2rem] font-extrabold bg-gradient-to-br from-[#6366f1] to-[#f472b6] bg-clip-text text-transparent">
           X.M
         </div>
-        <div>
+        <div class="flex items-center gap-8">
+          <div class="hidden md:flex gap-6 text-sm font-medium">
+            <a href="#contact" class="hover:text-[#6366f1] transition-colors">Bog'lanish</a>
+          </div>
           <ThemeSwitcher />
         </div>
       </div>
@@ -23,7 +26,7 @@ import ContactSection from './components/ContactSection.vue';
       <HeroSection />
       <ContactSection />
     </main>
-    
+
     <footer class="text-center py-16 text-[#475569] dark:text-[#94a3b8]">
       <div class="container">
         <p>&copy; 2026 Xusainboyev Muhammadjon. Barcha huquqlar himoyalangan.</p>
